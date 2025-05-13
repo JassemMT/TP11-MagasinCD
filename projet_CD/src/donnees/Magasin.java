@@ -70,7 +70,8 @@ public class Magasin {
 
 	// TODO  ajouter une methode de tri
 
-	public void TriCDTitre(){
+	public void TriGenerique(ComparateurCD comp){
+
 		ArrayList<CD> nv_liste = new ArrayList();
 
 		//Cd auquel on compare intialement
@@ -96,30 +97,5 @@ public class Magasin {
 		listeCds = nv_liste;
 	}
 
-	public void TriCDArtiste(){
-		ArrayList<CD> nv_liste = new ArrayList();
-
-		//Cd auquel on compare intialement
-		CD test_CD = new CD("artiste", "zzzzz");
-		CD smallest_cd = test_CD;
-		String nomArtiste;
-		String smaller;
-
-		while(nv_liste.size()<listeCds.size()) {
-			for (CD listeCd : listeCds) {
-				nomArtiste = listeCd.getNomArtiste();
-				smaller = smallest_cd.getNomArtiste();
-
-				if (nomArtiste.compareToIgnoreCase(smaller) < 0 && !nv_liste.contains(listeCd)) {
-					smallest_cd = listeCd;
-				}
-			}
-
-			nv_liste.add(smallest_cd);
-			smallest_cd = test_CD;
-		}
-
-		listeCds = nv_liste;
-	}
 
 }
